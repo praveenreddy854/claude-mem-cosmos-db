@@ -103,10 +103,10 @@
 </p>
 
 <p align="center">
-  Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect.
+  Claude-Mem Cosmos DB uses the original Claude-Mem project as its base and extends it with Azure Cosmos DB-backed shared memory, while preserving Claude-Mem's core context capture, summarization, and retrieval workflow across sessions.
 </p>
 
-> This repository is a fork of [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem), originally created by [Alex Newman](https://github.com/thedotmack). `claude-mem-cosmos-db` is maintained by [Praveen Reddy](https://github.com/praveenreddy854) and extends the project with Azure Cosmos DB-backed shared memory support.
+> This repository explicitly uses [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) as the upstream base project, originally created by [Alex Newman](https://github.com/thedotmack). `claude-mem-cosmos-db` is this fork's extension of Claude-Mem with Azure Cosmos DB-backed shared memory support.
 
 ---
 
@@ -307,14 +307,15 @@ Contributions are welcome! Please:
 4. Update documentation
 5. Submit a Pull Request
 
-See [Development Guide](https://docs.claude-mem.ai/development) for contribution workflow.
+See [Development Guide](https://docs.claude-mem.ai/development) for contribution workflow and [CONTRIBUTING.md](CONTRIBUTING.md) for fork-specific contribution and upstream coordination guidance.
 
 ---
 
 ## Fork Attribution
 
-- **Original project**: [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+- **Base project used by this fork**: [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Original author**: Alex Newman ([@thedotmack](https://github.com/thedotmack))
+- **Fork extension**: Azure Cosmos DB-backed shared memory for multi-machine use
 - **Fork maintainer**: Praveen Reddy ([@praveenreddy854](https://github.com/praveenreddy854))
 
 ---
@@ -345,6 +346,9 @@ See the [LICENSE](LICENSE) file for full details.
 - **Documentation**: [docs/](docs/)
 - **Issues**: [GitHub Issues](https://github.com/praveenreddy854/claude-mem-cosmos-db/issues)
 - **Repository**: [github.com/praveenreddy854/claude-mem-cosmos-db](https://github.com/praveenreddy854/claude-mem-cosmos-db)
+- **Contributing**: [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Security**: [SECURITY.md](SECURITY.md)
+- **Notice**: [NOTICE](NOTICE)
 - **Maintainer**: Praveen Reddy ([@praveenreddy854](https://github.com/praveenreddy854))
 - **Original project**: [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Official X Account**: [@Claude_Memory](https://x.com/Claude_Memory)
