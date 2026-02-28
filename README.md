@@ -85,7 +85,7 @@
 <br>
 
 <p align="center">
-  <a href="https://github.com/thedotmack/claude-mem">
+  <a href="https://github.com/praveenreddy854/claude-mem-cosmos-db">
     <picture>
       <img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/cm-preview.gif" alt="Claude-Mem Preview" width="800">
     </picture>
@@ -106,6 +106,8 @@
   Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect.
 </p>
 
+> This repository is a fork of [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem), originally created by [Alex Newman](https://github.com/thedotmack). `claude-mem-cosmos-db` is maintained by [Praveen Reddy](https://github.com/praveenreddy854) and extends the project with Azure Cosmos DB-backed shared memory support.
+
 ---
 
 ## Quick Start
@@ -113,14 +115,14 @@
 Start a new Claude Code session in the terminal and enter the following commands:
 
 ```
-/plugin marketplace add thedotmack/claude-mem
+/plugin marketplace add praveenreddy854/claude-mem-cosmos-db
 
-/plugin install claude-mem
+/plugin install claude-mem-cosmos-db
 ```
 
 Restart Claude Code. Context from previous sessions will automatically appear in new sessions.
 
-> **Note:** Claude-Mem is also published on npm, but `npm install -g claude-mem` installs the **SDK/library only** — it does not register the plugin hooks or set up the worker service. To use Claude-Mem as a plugin, always install via the `/plugin` commands above.
+> **Note:** Claude-Mem Cosmos DB is also published on npm, but `npm install -g claude-mem-cosmos-db` installs the **SDK/library only** and does not register the plugin hooks or set up the worker service. To use it as a plugin, install via the `/plugin` commands above.
 
 ### 🦞 OpenClaw Gateway
 
@@ -291,7 +293,7 @@ See the **[Troubleshooting Guide](https://docs.claude-mem.ai/troubleshooting)** 
 Create comprehensive bug reports with the automated generator:
 
 ```bash
-cd ~/.claude/plugins/marketplaces/thedotmack
+cd ~/.claude/plugins/marketplaces/praveenreddy854
 npm run bug-report
 ```
 
@@ -309,11 +311,22 @@ See [Development Guide](https://docs.claude-mem.ai/development) for contribution
 
 ---
 
+## Fork Attribution
+
+- **Original project**: [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+- **Original author**: Alex Newman ([@thedotmack](https://github.com/thedotmack))
+- **Fork maintainer**: Praveen Reddy ([@praveenreddy854](https://github.com/praveenreddy854))
+- **Upstream sponsorship**: GitHub Sponsors for Alex Newman remains listed in this fork to preserve attribution to the original project and its ongoing maintenance.
+
+---
+
 ## License
 
 This project is licensed under the **GNU Affero General Public License v3.0** (AGPL-3.0).
 
-Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
+Copyright (C) 2025 Alex Newman (@thedotmack).
+
+Fork modifications Copyright (C) 2026 Praveen Reddy (@praveenreddy854).
 
 See the [LICENSE](LICENSE) file for full details.
 
@@ -333,9 +346,12 @@ See the [LICENSE](LICENSE) file for full details.
 - **Documentation**: [docs/](docs/)
 - **Issues**: [GitHub Issues](https://github.com/praveenreddy854/claude-mem-cosmos-db/issues)
 - **Repository**: [github.com/praveenreddy854/claude-mem-cosmos-db](https://github.com/praveenreddy854/claude-mem-cosmos-db)
+- **Maintainer**: Praveen Reddy ([@praveenreddy854](https://github.com/praveenreddy854))
+- **Original project**: [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+- **Sponsor original author**: [GitHub Sponsors for @thedotmack](https://github.com/sponsors/thedotmack)
 - **Official X Account**: [@Claude_Memory](https://x.com/Claude_Memory)
 - **Official Discord**: [Join Discord](https://discord.com/invite/J4wttp9vDu)
-- **Author**: Alex Newman ([@thedotmack](https://github.com/thedotmack))
+- **Original author**: Alex Newman ([@thedotmack](https://github.com/thedotmack))
 
 ---
 

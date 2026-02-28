@@ -15,8 +15,18 @@
     "typescript",
     "nodejs"
   ],
-  "author": "Alex Newman",
+  "author": "Praveen Gaddam",
+  "contributors": [
+    "Praveen Gaddam (fork maintainer)",
+    "Alex Newman (original author)"
+  ],
   "license": "AGPL-3.0",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/thedotmack"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/praveenreddy854/claude-mem-cosmos-db.git"
@@ -48,7 +58,7 @@
   "scripts": {
     "dev": "npm run build-and-sync",
     "build": "node scripts/build-hooks.js",
-    "build-and-sync": "npm run build && npm run sync-marketplace && sleep 1 && cd ~/.claude/plugins/marketplaces/thedotmack && npm run worker:restart",
+    "build-and-sync": "npm run build && npm run sync-marketplace && sleep 1 && cd ~/.claude/plugins/marketplaces/praveenreddy854 && npm run worker:restart",
     "sync-marketplace": "node scripts/sync-marketplace.cjs",
     "sync-marketplace:force": "node scripts/sync-marketplace.cjs --force",
     "build:binaries": "node scripts/build-worker-binary.js",
