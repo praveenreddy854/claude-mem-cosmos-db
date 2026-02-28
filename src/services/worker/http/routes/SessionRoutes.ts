@@ -757,7 +757,8 @@ export class SessionRoutes extends BaseRouteHandler {
     }
 
     // Step 5: Save cleaned user prompt
-    store.saveUserPrompt(contentSessionId, promptNumber, cleanedPrompt);
+    const promptId = store.saveUserPrompt(contentSessionId, promptNumber, cleanedPrompt);
+    this.dbManager.scheduleUserPromptSync(promptId);
 
     // Step 6: Check if SDK agent is already running for this session (#1079)
     // If contextInjected is true, the hook should skip re-initializing the SDK agent

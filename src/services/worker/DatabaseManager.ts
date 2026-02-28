@@ -11,6 +11,7 @@
 import { SessionStore } from '../sqlite/SessionStore.js';
 import { SessionSearch } from '../sqlite/SessionSearch.js';
 import { ChromaSync } from '../sync/ChromaSync.js';
+import { RemoteMemorySync } from '../sync/RemoteMemorySync.js';
 import { SettingsDefaultsManager } from '../../shared/SettingsDefaultsManager.js';
 import { USER_SETTINGS_PATH } from '../../shared/paths.js';
 import { logger } from '../../utils/logger.js';
@@ -20,6 +21,7 @@ export class DatabaseManager {
   private sessionStore: SessionStore | null = null;
   private sessionSearch: SessionSearch | null = null;
   private chromaSync: ChromaSync | null = null;
+  private remoteMemorySync: RemoteMemorySync | null = null;
 
   /**
    * Initialize database connection (once, stays open)
@@ -38,6 +40,11 @@ export class DatabaseManager {
       logger.info('DB', 'Chroma disabled via CLAUDE_MEM_CHROMA_ENABLED=false, using SQLite-only search');
     }
 
+    this.remoteMemorySync = RemoteMemorySync.createFromSettings(settings);
+    if (this.remoteMemorySync) {
+      await this.remoteMemorySync.initialize(this.sessionStore!);
+    }
+
     logger.info('DB', 'Database initialized');
   }
 
@@ -49,6 +56,11 @@ export class DatabaseManager {
     if (this.chromaSync) {
       await this.chromaSync.close();
       this.chromaSync = null;
+    }
+
+    if (this.remoteMemorySync) {
+      await this.remoteMemorySync.close();
+      this.remoteMemorySync = null;
     }
 
     if (this.sessionStore) {
@@ -87,6 +99,38 @@ export class DatabaseManager {
    */
   getChromaSync(): ChromaSync | null {
     return this.chromaSync;
+  }
+
+  scheduleUserPromptSync(promptId: number): void {
+    if (!this.remoteMemorySync || !this.sessionStore) {
+      return;
+    }
+
+    this.remoteMemorySync.scheduleUserPromptSync(this.sessionStore, promptId);
+  }
+
+  scheduleObservationSync(observationId: number): void {
+    if (!this.remoteMemorySync || !this.sessionStore) {
+      return;
+    }
+
+    this.remoteMemorySync.scheduleObservationSync(this.sessionStore, observationId);
+  }
+
+  scheduleSummarySync(summaryId: number): void {
+    if (!this.remoteMemorySync || !this.sessionStore) {
+      return;
+    }
+
+    this.remoteMemorySync.scheduleSummarySync(this.sessionStore, summaryId);
+  }
+
+  scheduleRemoteSync(reason: string): void {
+    if (!this.remoteMemorySync || !this.sessionStore) {
+      return;
+    }
+
+    this.remoteMemorySync.scheduleFullSync(this.sessionStore, reason);
   }
 
   // REMOVED: cleanupOrphanedSessions - violates "EVERYTHING SHOULD SAVE ALWAYS"

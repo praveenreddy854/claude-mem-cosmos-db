@@ -52,6 +52,33 @@ See [OpenRouter Provider](usage/openrouter-provider) for detailed configuration,
 | `CLAUDE_MEM_PYTHON_VERSION`   | `3.13`                          | Python version for chroma-mcp         |
 | `CLAUDE_CODE_PATH`            | _(auto-detect)_                 | Path to Claude Code CLI (for Windows) |
 
+### Shared Memory (Azure Cosmos DB)
+
+| Setting                                    | Default            | Description |
+|--------------------------------------------|--------------------|-------------|
+| `CLAUDE_MEM_REMOTE_DB_ENABLED`             | `false`            | Enable shared memory sync with a remote database |
+| `CLAUDE_MEM_REMOTE_DB_PROVIDER`            | `azure-cosmos`     | Remote backend provider |
+| `CLAUDE_MEM_REMOTE_DB_SYNC_INTERVAL_MS`    | `30000`            | Background pull interval in milliseconds |
+| `CLAUDE_MEM_AZURE_COSMOS_CONNECTION_STRING`| —                  | Preferred Azure Cosmos DB connection string |
+| `CLAUDE_MEM_AZURE_COSMOS_ENDPOINT`         | —                  | Cosmos DB endpoint when not using a connection string |
+| `CLAUDE_MEM_AZURE_COSMOS_KEY`              | —                  | Cosmos DB key when not using a connection string |
+| `CLAUDE_MEM_AZURE_COSMOS_DATABASE`         | `claude-mem`       | Cosmos DB database name |
+| `CLAUDE_MEM_AZURE_COSMOS_CONTAINER`        | `memory-records`   | Cosmos DB container name |
+
+Remote shared memory keeps SQLite as the local working database, then syncs sessions, prompts, observations, and summaries through Azure Cosmos DB so multiple machines can share memory.
+
+Example:
+
+```json
+{
+  "CLAUDE_MEM_REMOTE_DB_ENABLED": "true",
+  "CLAUDE_MEM_REMOTE_DB_PROVIDER": "azure-cosmos",
+  "CLAUDE_MEM_AZURE_COSMOS_CONNECTION_STRING": "AccountEndpoint=https://<account>.documents.azure.com:443/;AccountKey=<key>;",
+  "CLAUDE_MEM_AZURE_COSMOS_DATABASE": "claude-mem",
+  "CLAUDE_MEM_AZURE_COSMOS_CONTAINER": "memory-records"
+}
+```
+
 ## Model Configuration
 
 Configure which AI model processes your observations.

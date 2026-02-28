@@ -1,8 +1,8 @@
 {
-  "name": "claude-mem-plugin",
+  "name": "claude-mem-cosmos-db-plugin",
   "version": "10.5.2",
   "private": true,
-  "description": "Runtime dependencies for claude-mem bundled hooks",
+  "description": "Runtime dependencies for claude-mem-cosmos-db bundled hooks",
   "type": "module",
   "dependencies": {
     "tree-sitter-cli": "^0.26.5",

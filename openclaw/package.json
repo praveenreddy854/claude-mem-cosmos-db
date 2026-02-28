@@ -1,5 +1,5 @@
 {
-  "name": "@openclaw/claude-mem",
+  "name": "@openclaw/claude-mem-cosmos-db",
   "version": "1.0.0",
   "private": true,
   "type": "module",

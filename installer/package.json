@@ -1,8 +1,8 @@
 {
-  "name": "claude-mem-installer",
+  "name": "claude-mem-cosmos-db-installer",
   "version": "1.0.0",
   "type": "module",
-  "bin": { "claude-mem-installer": "./dist/index.js" },
+  "bin": { "claude-mem-cosmos-db-installer": "./dist/index.js" },
   "files": ["dist"],
   "scripts": {
     "build": "node build.mjs",

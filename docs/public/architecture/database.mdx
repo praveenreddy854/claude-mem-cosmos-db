@@ -7,6 +7,8 @@ description: "SQLite schema, FTS5 search, and data storage"
 
 Claude-Mem uses SQLite 3 with the bun:sqlite native module for persistent storage and FTS5 for full-text search.
 
+Optional shared-memory mode keeps SQLite as the local cache and synchronizes sessions, prompts, observations, and summaries through Azure Cosmos DB so multiple machines can share the same memory corpus.
+
 ## Database Location
 
 **Path**: `~/.claude-mem/claude-mem.db`

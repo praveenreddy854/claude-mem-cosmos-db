@@ -111,6 +111,13 @@ export async function processAgentResponse(
     memorySessionId: session.memorySessionId
   });
 
+  for (const observationId of result.observationIds) {
+    dbManager.scheduleObservationSync(observationId);
+  }
+  if (result.summaryId) {
+    dbManager.scheduleSummarySync(result.summaryId);
+  }
+
   // CLAIM-CONFIRM: Now that storage succeeded, confirm all processing messages (delete from queue)
   // This is the critical step that prevents message loss on generator crash
   const pendingStore = sessionManager.getPendingMessageStore();

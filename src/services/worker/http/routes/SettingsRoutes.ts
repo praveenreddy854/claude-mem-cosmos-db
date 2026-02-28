@@ -122,6 +122,15 @@ export class SettingsRoutes extends BaseRouteHandler {
       'CLAUDE_MEM_CONTEXT_SHOW_LAST_SUMMARY',
       'CLAUDE_MEM_CONTEXT_SHOW_LAST_MESSAGE',
       'CLAUDE_MEM_FOLDER_CLAUDEMD_ENABLED',
+      // Remote shared memory backend
+      'CLAUDE_MEM_REMOTE_DB_ENABLED',
+      'CLAUDE_MEM_REMOTE_DB_PROVIDER',
+      'CLAUDE_MEM_REMOTE_DB_SYNC_INTERVAL_MS',
+      'CLAUDE_MEM_AZURE_COSMOS_CONNECTION_STRING',
+      'CLAUDE_MEM_AZURE_COSMOS_ENDPOINT',
+      'CLAUDE_MEM_AZURE_COSMOS_KEY',
+      'CLAUDE_MEM_AZURE_COSMOS_DATABASE',
+      'CLAUDE_MEM_AZURE_COSMOS_CONTAINER',
     ];
 
     for (const key of settingKeys) {
@@ -234,9 +243,16 @@ export class SettingsRoutes extends BaseRouteHandler {
   private validateSettings(settings: any): { valid: boolean; error?: string } {
     // Validate CLAUDE_MEM_PROVIDER
     if (settings.CLAUDE_MEM_PROVIDER) {
-    const validProviders = ['claude', 'gemini', 'openrouter'];
-    if (!validProviders.includes(settings.CLAUDE_MEM_PROVIDER)) {
-      return { valid: false, error: 'CLAUDE_MEM_PROVIDER must be "claude", "gemini", or "openrouter"' };
+      const validProviders = ['claude', 'gemini', 'openrouter'];
+      if (!validProviders.includes(settings.CLAUDE_MEM_PROVIDER)) {
+        return { valid: false, error: 'CLAUDE_MEM_PROVIDER must be "claude", "gemini", or "openrouter"' };
+      }
+    }
+
+    if (settings.CLAUDE_MEM_REMOTE_DB_PROVIDER) {
+      const validRemoteProviders = ['azure-cosmos'];
+      if (!validRemoteProviders.includes(settings.CLAUDE_MEM_REMOTE_DB_PROVIDER)) {
+        return { valid: false, error: 'CLAUDE_MEM_REMOTE_DB_PROVIDER must be "azure-cosmos"' };
       }
     }
 
@@ -261,6 +277,13 @@ export class SettingsRoutes extends BaseRouteHandler {
       const port = parseInt(settings.CLAUDE_MEM_WORKER_PORT, 10);
       if (isNaN(port) || port < 1024 || port > 65535) {
         return { valid: false, error: 'CLAUDE_MEM_WORKER_PORT must be between 1024 and 65535' };
+      }
+    }
+
+    if (settings.CLAUDE_MEM_REMOTE_DB_SYNC_INTERVAL_MS) {
+      const interval = parseInt(settings.CLAUDE_MEM_REMOTE_DB_SYNC_INTERVAL_MS, 10);
+      if (isNaN(interval) || interval < 1000) {
+        return { valid: false, error: 'CLAUDE_MEM_REMOTE_DB_SYNC_INTERVAL_MS must be at least 1000 milliseconds' };
       }
     }
 

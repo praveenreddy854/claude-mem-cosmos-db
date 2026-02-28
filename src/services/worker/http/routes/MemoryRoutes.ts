@@ -68,6 +68,8 @@ export class MemoryRoutes extends BaseRouteHandler {
       title: observation.title
     });
 
+    this.dbManager.scheduleObservationSync(result.id);
+
     // 4. Sync to ChromaDB (async, fire-and-forget)
     chromaSync.syncObservation(
       result.id,

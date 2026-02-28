@@ -1,5 +1,5 @@
 {
-  "name": "claude-mem",
+  "name": "claude-mem-cosmos-db",
   "version": "10.5.2",
   "description": "Memory compression system for Claude Code - persist context across sessions",
   "keywords": [
@@ -19,11 +19,11 @@
   "license": "AGPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thedotmack/claude-mem.git"
+    "url": "https://github.com/praveenreddy854/claude-mem-cosmos-db.git"
   },
-  "homepage": "https://github.com/thedotmack/claude-mem#readme",
+  "homepage": "https://github.com/praveenreddy854/claude-mem-cosmos-db#readme",
   "bugs": {
-    "url": "https://github.com/thedotmack/claude-mem/issues"
+    "url": "https://github.com/praveenreddy854/claude-mem-cosmos-db/issues"
   },
   "type": "module",
   "exports": {
@@ -97,6 +97,7 @@
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.1.76",
+    "@azure/cosmos": "^4.9.1",
     "@modelcontextprotocol/sdk": "^1.25.1",
     "ansi-to-html": "^0.7.2",
     "dompurify": "^3.3.1",

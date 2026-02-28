@@ -68,6 +68,15 @@ export interface SettingsDefaults {
   CLAUDE_MEM_CHROMA_API_KEY: string;
   CLAUDE_MEM_CHROMA_TENANT: string;
   CLAUDE_MEM_CHROMA_DATABASE: string;
+  // Remote shared memory backend
+  CLAUDE_MEM_REMOTE_DB_ENABLED: string;
+  CLAUDE_MEM_REMOTE_DB_PROVIDER: string;
+  CLAUDE_MEM_REMOTE_DB_SYNC_INTERVAL_MS: string;
+  CLAUDE_MEM_AZURE_COSMOS_CONNECTION_STRING: string;
+  CLAUDE_MEM_AZURE_COSMOS_ENDPOINT: string;
+  CLAUDE_MEM_AZURE_COSMOS_KEY: string;
+  CLAUDE_MEM_AZURE_COSMOS_DATABASE: string;
+  CLAUDE_MEM_AZURE_COSMOS_CONTAINER: string;
 }
 
 export class SettingsDefaultsManager {
@@ -130,6 +139,15 @@ export class SettingsDefaultsManager {
     CLAUDE_MEM_CHROMA_API_KEY: '',
     CLAUDE_MEM_CHROMA_TENANT: 'default_tenant',
     CLAUDE_MEM_CHROMA_DATABASE: 'default_database',
+    // Remote shared memory backend
+    CLAUDE_MEM_REMOTE_DB_ENABLED: 'false',
+    CLAUDE_MEM_REMOTE_DB_PROVIDER: 'azure-cosmos',
+    CLAUDE_MEM_REMOTE_DB_SYNC_INTERVAL_MS: '30000',
+    CLAUDE_MEM_AZURE_COSMOS_CONNECTION_STRING: '',
+    CLAUDE_MEM_AZURE_COSMOS_ENDPOINT: '',
+    CLAUDE_MEM_AZURE_COSMOS_KEY: '',
+    CLAUDE_MEM_AZURE_COSMOS_DATABASE: 'claude-mem',
+    CLAUDE_MEM_AZURE_COSMOS_CONTAINER: 'memory-records',
   };
 
   /**
@@ -160,7 +178,7 @@ export class SettingsDefaultsManager {
    */
   static getBool(key: keyof SettingsDefaults): boolean {
     const value = this.get(key);
-    return value === 'true' || value === true;
+    return value === 'true';
   }
 
   /**

@@ -40,6 +40,7 @@ export const MODES_DIR = join(DATA_DIR, 'modes');
 export const USER_SETTINGS_PATH = join(DATA_DIR, 'settings.json');
 export const DB_PATH = join(DATA_DIR, 'claude-mem.db');
 export const VECTOR_DB_DIR = join(DATA_DIR, 'vector-db');
+export const REMOTE_SYNC_STATE_PATH = join(DATA_DIR, 'remote-sync-state.json');
 
 // Observer sessions directory - used as cwd for SDK queries
 // Sessions here won't appear in user's `claude --resume` for their actual projects
