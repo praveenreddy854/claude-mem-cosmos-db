@@ -7,7 +7,7 @@ description: "Persistent AI memory for Cursor IDE - free tier options available"
 
 > **Your AI stops forgetting. Give Cursor persistent memory.**
 
-Every Cursor session starts fresh - your AI doesn't remember what it worked on yesterday. Claude-mem changes that. Your agent builds cumulative knowledge about your codebase, decisions, and patterns over time.
+Every Cursor session starts fresh - your AI doesn't remember what it worked on yesterday. Claude-Mem Cosmos DB builds on Claude-Mem and adds optional Azure Cosmos DB-backed shared memory so your agent can retain cumulative knowledge across machines.
 
 <CardGroup cols={2}>
   <Card title="Free to Start" icon="dollar-sign">
@@ -47,8 +47,8 @@ If you're using Cursor without a Claude Code subscription:
 
 ```bash
 # Clone and build
-git clone https://github.com/thedotmack/claude-mem.git
-cd claude-mem && bun install && bun run build
+git clone https://github.com/praveenreddy854/claude-mem-cosmos-db.git
+cd claude-mem-cosmos-db && bun install && bun run build
 
 # Run interactive setup wizard
 bun run cursor:setup
@@ -70,8 +70,8 @@ If you have Claude Code installed:
 
 ```bash
 # Install the plugin (if not already)
-/plugin marketplace add thedotmack/claude-mem
-/plugin install claude-mem
+/plugin marketplace add praveenreddy854/claude-mem-cosmos-db
+/plugin install claude-mem-cosmos-db
 
 # Install Cursor hooks
 claude-mem cursor install

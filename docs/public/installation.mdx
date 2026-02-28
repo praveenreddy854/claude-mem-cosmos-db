@@ -7,11 +7,11 @@ description: "Install Claude-Mem plugin for persistent memory across sessions"
 
 ## Quick Start
 
-Install Claude-Mem directly from the plugin marketplace:
+Install Claude-Mem Cosmos DB directly from the plugin marketplace:
 
 ```bash
-/plugin marketplace add thedotmack/claude-mem
-/plugin install claude-mem
+/plugin marketplace add praveenreddy854/claude-mem-cosmos-db
+/plugin install claude-mem-cosmos-db
 ```
 
 That's it! The plugin will automatically:
@@ -22,9 +22,9 @@ That's it! The plugin will automatically:
 
 Start a new Claude Code session and you'll see context from previous sessions automatically loaded.
 
-> **Important:** Claude-Mem is published on npm, but running `npm install -g claude-mem` installs the
+> **Important:** Claude-Mem Cosmos DB is published on npm, but running `npm install -g claude-mem-cosmos-db` installs the
 > **SDK/library only**. It does **not** register plugin hooks or start the worker service.
-> To use Claude-Mem as a persistent memory plugin, always install via the `/plugin` commands above.
+> To use it as a persistent memory plugin, always install via the `/plugin` commands above.
 
 ## System Requirements
 
@@ -41,8 +41,8 @@ For development or testing, you can clone and build from source:
 
 ```bash
 # Clone the repository
-git clone https://github.com/thedotmack/claude-mem.git
-cd claude-mem
+git clone https://github.com/praveenreddy854/claude-mem-cosmos-db.git
+cd claude-mem-cosmos-db
 
 # Install dependencies
 npm install
@@ -107,7 +107,7 @@ Upgrades are automatic when updating via the plugin marketplace. Key changes in 
 
 **v5.4.0+**: Skill-based search replaces MCP tools, saving ~2,250 tokens per session.
 
-See [CHANGELOG](https://github.com/thedotmack/claude-mem/blob/main/CHANGELOG.md) for complete version history.
+See [CHANGELOG](https://github.com/praveenreddy854/claude-mem-cosmos-db/blob/main/CHANGELOG.md) for complete version history.
 
 ## Next Steps
 

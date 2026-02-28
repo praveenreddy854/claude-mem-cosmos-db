@@ -1,0 +1,17 @@
+claude-mem-cosmos-db
+
+This repository is a fork of:
+https://github.com/thedotmack/claude-mem
+
+Original project:
+Claude-Mem
+Original author: Alex Newman (@thedotmack)
+License: AGPL-3.0
+
+Fork maintainer:
+Praveen Reddy (@praveenreddy854)
+
+Fork purpose:
+Extend Claude-Mem with Azure Cosmos DB-backed shared memory and fork-specific maintenance.
+
+Unless otherwise noted, files inherited from the upstream project remain subject to their original license terms.

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Fork contribution guide
+    url: https://github.com/praveenreddy854/claude-mem-cosmos-db/blob/main/CONTRIBUTING.md
+    about: Read the fork contribution and upstream coordination guidance before opening larger issues or PRs.
+  - name: Security policy
+    url: https://github.com/praveenreddy854/claude-mem-cosmos-db/blob/main/SECURITY.md
+    about: Follow the security reporting process for sensitive vulnerabilities.
