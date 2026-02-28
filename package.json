@@ -21,12 +21,6 @@
     "Alex Newman (original author)"
   ],
   "license": "AGPL-3.0",
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/thedotmack"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/praveenreddy854/claude-mem-cosmos-db.git"

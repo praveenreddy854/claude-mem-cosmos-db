@@ -316,7 +316,6 @@ See [Development Guide](https://docs.claude-mem.ai/development) for contribution
 - **Original project**: [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Original author**: Alex Newman ([@thedotmack](https://github.com/thedotmack))
 - **Fork maintainer**: Praveen Reddy ([@praveenreddy854](https://github.com/praveenreddy854))
-- **Upstream sponsorship**: GitHub Sponsors for Alex Newman remains listed in this fork to preserve attribution to the original project and its ongoing maintenance.
 
 ---
 
@@ -348,7 +347,6 @@ See the [LICENSE](LICENSE) file for full details.
 - **Repository**: [github.com/praveenreddy854/claude-mem-cosmos-db](https://github.com/praveenreddy854/claude-mem-cosmos-db)
 - **Maintainer**: Praveen Reddy ([@praveenreddy854](https://github.com/praveenreddy854))
 - **Original project**: [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
-- **Sponsor original author**: [GitHub Sponsors for @thedotmack](https://github.com/sponsors/thedotmack)
 - **Official X Account**: [@Claude_Memory](https://x.com/Claude_Memory)
 - **Official Discord**: [Join Discord](https://discord.com/invite/J4wttp9vDu)
 - **Original author**: Alex Newman ([@thedotmack](https://github.com/thedotmack))
